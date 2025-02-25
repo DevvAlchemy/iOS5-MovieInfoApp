@@ -11,7 +11,7 @@ struct Constants {
     // TMDB API
     struct API {
         static let baseURL = "https://api.themoviedb.org/3"
-        static let apiKey = "YOUR_API_KEY"
+        static let apiKey = "42ed2fc006c32959dcf686491a435ea7"
 
         // Endpoints
         static let popularMovies = "/movie/popular"

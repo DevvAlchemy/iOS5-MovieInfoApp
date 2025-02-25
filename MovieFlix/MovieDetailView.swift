@@ -27,7 +27,7 @@ struct MovieDetailView: View {
 
                     // Overview section
                     overviewSection
-                        .padding(.top, 20)
+                        .padding(.top, 30)
                 }
 
                 // Overlay loading or error views when needed
@@ -124,14 +124,14 @@ struct MovieDetailView: View {
                             .fill(Color.gray.opacity(0.3))
                     }
                 }
-                .frame(width: 100, height: 150)
+                .frame(width: 110, height: 160)
                 .cornerRadius(10)
                 .shadow(radius: 5)
 
                 // Title and year
                 VStack(alignment: .leading, spacing: 8) {
                     Text(viewModel.movie?.title ?? "")
-                        .font(.title3)
+                        .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                         .shadow(radius: 2)
@@ -173,7 +173,8 @@ struct MovieDetailView: View {
             // Section title
             Text("Details")
                 .font(.headline)
-                .padding(.horizontal)
+                .padding(.horizontal, 30)
+
 
             // Details cards
             ScrollView(.horizontal, showsIndicators: false) {
@@ -227,11 +228,11 @@ struct MovieDetailView: View {
 
             // Value
             Text(value)
-                .font(.subheadline)
+                .font(.callout)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
         }
-        .frame(width: 110, height: 110)
+        .frame(width: 120, height: 120)
         .padding()
         .background(Color(.secondarySystemBackground))
         .cornerRadius(10)
@@ -242,14 +243,17 @@ struct MovieDetailView: View {
         VStack(alignment: .leading, spacing: 12) {
             // Section title
             Text("Overview")
-                .font(.headline)
-                .padding(.horizontal)
+                .font(.title2)
+                .fontWeight(.medium)
+                .padding(.horizontal, 30)
+                .padding(.top, 10)
 
             // Overview content
             if let overview = viewModel.movie?.overview, !overview.isEmpty {
                 Text(overview)
                     .font(.body)
                     .foregroundColor(.secondary)
+                    .lineSpacing(4)
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.horizontal)
             } else {
